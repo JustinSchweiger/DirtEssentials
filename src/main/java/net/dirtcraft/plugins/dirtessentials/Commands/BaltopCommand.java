@@ -40,6 +40,10 @@ public class BaltopCommand implements CommandExecutor, TabCompleter {
 		List<UUID> sorted = new ArrayList<>(balances.keySet());
 		sorted.sort(Comparator.comparingDouble(balances::get).reversed());
 
+		if (balances.size() <= 0) {
+			sender.sendMessage(Strings.PREFIX + ChatColor.RED + "No balances found.");
+		}
+
 		Map<UUID, String> map = PlayerManager.getPlayerMap();
 		int listEntries = Math.min(Utilities.config.economy.baltopSize, 15);
 		int page = args.length > 0 ? Integer.parseInt(args[0]) : 1;

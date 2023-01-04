@@ -56,6 +56,7 @@ public class Permissions {
 	public static final String BACK = "dirtessentials.back";
 	public static final String HOMES = "dirtessentials.homes";
 	public static final String DELHOME = "dirtessentials.delhome";
+	public static final String DELHOME_OTHER = "dirtessentials.delhome.other";
 	public static final String OTHERHOME = "dirtessentials.otherhome";
 	public static final String STAFF = "dirtessentials.staff";
 	public static final String SEEN = "dirtessentials.seen";

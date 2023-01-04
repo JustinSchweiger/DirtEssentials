@@ -215,7 +215,7 @@ commands:
     entityzap:
         description: Zaps an entity at specific coordinates
     radiuszap:
-        description: Zaps specific entites at specific coordinates
+        description: Zaps blocks in a radius around specific coordinates
     respect:
         description: Sends the f message
         aliases: [ f ]
@@ -348,7 +348,9 @@ permissions:
     dirtessentials.back:
         description: Allows the player to use /back
     dirtessentials.otherhome:
-        description: Allows the player to use /otherhome
+        description: Allows the player to use /otherhome <IGN> list and teleport
+    dirtessentials.delhome.other:
+        description: Allows the player to use /otherhome <IGN> delete
     dirtessentials.staff:
         description: Marks the player as staff
     dirtessentials.tppos:
@@ -650,6 +652,7 @@ permissions:
             dirtessentials.sethome: true
             dirtessentials.home: true
             dirtessentials.delhome: true
+            dirtessentials.delhome.other: true
             dirtessentials.homes: true
             dirtessentials.back: true
             dirtessentials.otherhome: true
@@ -701,5 +704,6 @@ permissions:
             dirtessentials.worldname: true
             dirtessentials.exportrecipes: true
             dirtessentials.listautobroadcasts: true
+            dirtessentials.bill: true
             dirtessentials.buyhome: true
             dirtessentials.gc: true

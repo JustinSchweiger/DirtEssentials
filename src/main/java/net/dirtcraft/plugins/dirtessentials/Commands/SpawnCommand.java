@@ -30,7 +30,13 @@ public class SpawnCommand implements CommandExecutor, TabCompleter {
 			return true;
 		}
 
-		Player target = args.length == 1 ? Bukkit.getPlayer(args[0]) : (Player) sender;
+		Player target;
+
+		if (!sender.hasPermission(Permissions.SPAWN_OTHER)) {
+			target = (Player) sender;
+		} else {
+			target = args.length == 1 ? Bukkit.getPlayer(args[0]) : (Player) sender;
+		}
 		if (target == null) {
 			sender.sendMessage(Strings.PLAYER_NOT_FOUND);
 			return true;

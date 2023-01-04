@@ -7,6 +7,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.*;
+
 public class ShrugCommand implements CommandExecutor {
 
 	@Override
@@ -16,7 +18,13 @@ public class ShrugCommand implements CommandExecutor {
 			return false;
 		}
 
-		((Player) sender).chat("\u00AF\\_(\u30C4)_/\u00AF");
+		StringBuilder messageString = new StringBuilder();
+		for (int i = 0; i < args.length; i++) {
+			messageString.append(args[i]).append(" ");
+		}
+		messageString.append("\u00AF\\_(\u30C4)_/\u00AF");
+
+		((Player) sender).chat(messageString.toString());
 		return true;
 	}
 }

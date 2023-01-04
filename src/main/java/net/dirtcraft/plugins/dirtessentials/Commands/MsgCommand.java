@@ -29,7 +29,7 @@ public class MsgCommand implements CommandExecutor, TabCompleter {
 			return true;
 		}
 
-		if (args.length == 0) {
+		if (args.length <= 1) {
 			sender.sendMessage(Strings.USAGE + "/msg <player> <message>");
 			return true;
 		}
@@ -49,11 +49,6 @@ public class MsgCommand implements CommandExecutor, TabCompleter {
 		Player player = (Player) sender;
 		if (target == sender) {
 			sender.sendMessage(Strings.PREFIX + "You can't message yourself!");
-			return true;
-		}
-
-		if (args.length == 1) {
-			sender.sendMessage(Strings.USAGE + "/msg <player> <message>");
 			return true;
 		}
 
